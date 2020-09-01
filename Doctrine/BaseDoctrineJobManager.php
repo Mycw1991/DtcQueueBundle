@@ -17,7 +17,7 @@ abstract class BaseDoctrineJobManager extends ArchivableJobManager
     const SAVE_COUNT_MAX = 100;
 
     /**
-     * @var ObjectManager
+     * @var \Doctrine\Persistence\ObjectManager
      */
     protected $objectManager;
 
@@ -30,7 +30,7 @@ abstract class BaseDoctrineJobManager extends ArchivableJobManager
     public function __construct(
         RunManager $runManager,
         JobTimingManager $jobTimingManager,
-        ObjectManager $objectManager,
+        $objectManager,
         $jobClass,
         $jobArchiveClass
     ) {

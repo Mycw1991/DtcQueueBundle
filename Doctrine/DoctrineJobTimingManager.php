@@ -8,10 +8,10 @@ use Dtc\QueueBundle\Model\JobTiming;
 
 abstract class DoctrineJobTimingManager extends JobTimingManager
 {
-    /** @var ObjectManager */
+    /** @var \Doctrine\Persistence\ObjectManager  */
     protected $objectManager;
 
-    public function __construct(ObjectManager $objectManager, $jobTimingClass, $recordTimings)
+    public function __construct($objectManager, $jobTimingClass, $recordTimings)
     {
         $this->objectManager = $objectManager;
         parent::__construct($jobTimingClass, $recordTimings);

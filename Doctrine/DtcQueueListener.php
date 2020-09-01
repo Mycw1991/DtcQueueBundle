@@ -2,7 +2,7 @@
 
 namespace Dtc\QueueBundle\Doctrine;
 
-use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\ClassMetadata;
 use Doctrine\ORM\EntityManager;
@@ -95,7 +95,7 @@ class DtcQueueListener
     /**
      * @param $metadata
      */
-    protected function adjustIdGenerator(\Doctrine\Common\Persistence\Mapping\ClassMetadata $metadata)
+    protected function adjustIdGenerator(\Doctrine\ORM\Mapping\ClassMetadata $metadata)
     {
         $objectManager = $this->getObjectManager();
         if ($objectManager instanceof EntityManager && $metadata instanceof \Doctrine\ORM\Mapping\ClassMetadata) {
